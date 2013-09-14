@@ -23,4 +23,5 @@ class Session(object):
         br.select_form(nr=0)
         br.form['login_jabberid'] = user
         br.form['login_jabberpass'] = password
+        br.form.find_control(id="login_session").items[0].selected = True
         br.submit()
