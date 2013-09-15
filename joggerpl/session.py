@@ -25,3 +25,5 @@ class Session(object):
         br.form['login_jabberpass'] = password
         br.form.find_control(id="login_session").items[0].selected = True
         br.submit()
+        assert '<body id="dashboard" class="logged">' in br.response().read(),\
+            'Login error'
